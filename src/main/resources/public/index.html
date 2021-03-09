@@ -1,0 +1,95 @@
+<index>
+    <head>
+        <title>RoundRobin</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <style>
+            body {
+                background-image: url("https://i.pinimg.com/originals/1d/da/26/1dda26bbc0424889bd543d49d6e6af1c.jpg");
+            }
+            h1 {
+                font-family: Arial;
+                font-size: 50px;
+            }
+            input {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+            button{
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+               }
+
+            td, th {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+            }
+
+            tr:nth-child(even) {
+              background-color: #dddddd;
+            }
+        </style>
+    </head>
+    <body>
+        <div align="center">
+            <br>
+            <h1>Escriba un mensaje</h1>
+            <input type="text" id="field"><br>
+            <button id="sendMessage">Enviar mensaje</button>
+            <table id="tabla">
+                <tr>
+                    <th>Mensaje</th>
+                    <th>Fecha</th>
+                </tr>
+            </table>
+        </div>
+
+
+        <script>
+            $(function() {
+                $("#sendMessage").click(function(){
+                    var descripcion = $("#field").val();
+                    var date = new Date();
+                    var formatted_date = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+
+                    var mensaje = {"descripcion":descripcion,"date": formatted_date};
+
+                    $.ajax({
+                        method: "POST",
+                        data: JSON.stringify(mensaje),
+                        url: "/logservice",
+                        dataType: 'json',
+                        contentType: 'application/json',
+                        success: function(data){
+                            $("#tabla").find("tr:gt(0)").remove();
+                            var arrows = '';
+                            $.each(data, function(i, item) {
+                                arrows += '<tr><td>' + item.descripcion + '</td><td>' + item.date + '</td></tr>';
+                            });
+                            $("#tabla").append(arrows);
+                        },
+                    });
+                });
+            });
+        </script>
+    </body>
+</index>
