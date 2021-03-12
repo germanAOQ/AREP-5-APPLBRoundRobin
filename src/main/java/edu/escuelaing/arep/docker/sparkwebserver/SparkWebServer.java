@@ -19,10 +19,17 @@ import java.util.Map;
 
 import static spark.Spark.*;
 
+/**
+ * @author Germán Ospina
+ *
+ */
 public class SparkWebServer {
 
     private static int server = 1;
 
+    /** Método main de la aplicación web
+     * @param args
+     */
     public static void main(String... args){
         port(getPort());
         staticFiles.location("/public");
@@ -74,6 +81,9 @@ public class SparkWebServer {
         return requestURL;
     }
 
+    /** Permite retornar el puerto que por defecto asigna el entorno.
+     * @return el puerto asignado por el entorno.
+     */
     private static int getPort() {
         if (System.getenv("PORT") != null) {
             return Integer.parseInt(System.getenv("PORT"));

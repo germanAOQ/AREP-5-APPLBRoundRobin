@@ -2,6 +2,12 @@ package edu.escuelaing.arep.docker.model;
 
 import java.util.Date;
 
+/**
+ * Esta clase permite mapear los mensajes obtenidos a partir de solicitudes post al API
+ * 
+ * @author German
+ *
+ */
 public class Mensaje {
 
     private String descripcion;

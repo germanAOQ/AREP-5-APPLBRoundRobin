@@ -5,10 +5,16 @@ public enum StatusResponse {
 
     final private String status;
 
+    /**
+     * @param status asignar estado de la respuesta
+     */
     StatusResponse(String status) {
         this.status = status;
     }
 
+    /**
+     * @return el estado de la respuesta
+     */
     public String getStatus() {
         return status;
     }
