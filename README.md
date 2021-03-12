@@ -109,7 +109,11 @@ permitíera alojar el contenedor Docker creado previamente.
    En el siguiente link, se encuentra el taller ya desplegado en EC2:                                                      
    http://ec2-34-224-94-29.compute-1.amazonaws.com/
    ## Pruebas
-   ### Pruebas de funcionamiento general
+   ### Pruebas de funcionamiento general (Parte 1)
+   
+   ![](images/prueba_0.PNG)
+   
+   ### Pruebas de funcionamiento general (Parte 2)
    Para estas pruebas, se ingresan mensajes a la apliación. Se hacen 3 pruebas con 1, 5 y 10 mensajes respectivamente:  
    
    ![](images/prueba_1.PNG)
