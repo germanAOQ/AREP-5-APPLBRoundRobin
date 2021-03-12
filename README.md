@@ -1,3 +1,7 @@
+# Links de interés 
+* [Aplicación web desplegada en EC2](http://ec2-34-224-94-29.compute-1.amazonaws.com/)
+* [Repositorio de Log Service](https://github.com/germanAOQ/AREP-5-LogService.git)
+
 # Taller de Modularización con Virtualización e Introducción a Docker y a AWS
 ### Pre-requisitos
 Para hacer uso del software es necesario tener instalado:
@@ -107,8 +111,14 @@ permitíera alojar el contenedor Docker creado previamente.
    ## Pruebas
    ### Pruebas de funcionamiento general
    Para estas pruebas, se ingresan mensajes a la apliación. Se hacen 3 pruebas con 1, 5 y 10 mensajes respectivamente:  
-   ## Documentación
-
+   
+   ![](images/prueba_1.PNG)
+   
+   ![](images/prueba_2.PNG)
+   
+   ![](images/prueba_3.PNG)
+   
+## Documentación
 ### Generar documentación
 Para generar la documentación se debe agregar al código del archivo de configuración de Maven, POM.xml, el siguiente plugin:
 ```
